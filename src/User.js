@@ -53,9 +53,10 @@ export function User(name, date) {
 }
 
 function filteredAdd (object, property, element) {
-  if (object[property].includes(element)) {
-    object[property] = object[property].filter((filterElem) => filterElem !== element);
+  let { property } = object;
+  if (property.includes(element)) {
+    property = property.filter((filterElem) => filterElem !== element);
   } else {
-    object[property].push(element);
+    property.push(element);
   }
 }
